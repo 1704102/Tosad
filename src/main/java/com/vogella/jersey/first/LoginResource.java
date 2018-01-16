@@ -1,5 +1,8 @@
 package com.vogella.jersey.first;
 
+import com.vogella.jersey.first.Model.User;
+import com.vogella.jersey.first.database.LoginDatabase;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
@@ -16,7 +19,9 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String Login() {
 
-        return "hello world";
+
+            return "hello";
+
 
     }
 }
