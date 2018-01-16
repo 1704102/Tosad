@@ -3,6 +3,12 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="webappRunnerSample.war">
       <element id="artifact" artifact-name="Tosad 1.1:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Jersey-2.2" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>
