@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ipass-MartijnBakker" />
+        <module name="Tosad 1.1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ipass-MartijnBakker" target="1.5" />
+      <module name="Tosad 1.1" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -21,6 +21,7 @@
     user = sessionStorage.getItem("login");
     $.get("rest/login/" + user.username + "/" + user.password, function (data) {
         document.location.href = 'worker.jsp'
+
     });
 }</script>
 <div class="content">

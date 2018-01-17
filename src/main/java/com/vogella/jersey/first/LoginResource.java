@@ -1,7 +1,11 @@
 package com.vogella.jersey.first;
+
 import com.vogella.jersey.first.Model.Employee;
 import com.vogella.jersey.first.Model.Employees;
+import com.vogella.jersey.first.Model.User;
+import com.vogella.jersey.first.database.LoginDatabase;
 
+import javax.json.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
@@ -13,18 +17,14 @@ import java.util.ArrayList;
 public class LoginResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Employees Login() {
+    public String Login() {
 
-
-        Employees list = new Employees();
-        list.setEmployeeList(new ArrayList<Employee>());
-
-        list.getEmployeeList().add(new Employee(1, "Lokesh Gupta"));
-        list.getEmployeeList().add(new Employee(2, "Alex Kolenchiskey"));
-        list.getEmployeeList().add(new Employee(3, "David Kameron"));
-
-        return list;
-
+        JsonObject json = Json.createObjectBuilder()
+                .add("name", "Falco")
+                .add("age", "38")
+                .add("biteable", "true").build();
+        String result = json.toString();
+        return result;
 
     }
 }
