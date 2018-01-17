@@ -35,9 +35,9 @@ public class LoginResource {
 
 
 
-        return "jsonCallback({\n" +
+        return "jsonCallback(\n" +
                 array.toString() +
-                "});";
+                ");";
 
     }
 }
