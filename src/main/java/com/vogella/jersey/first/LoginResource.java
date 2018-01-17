@@ -1,10 +1,8 @@
 package com.vogella.jersey.first;
-
-
-import com.sun.jersey.api.json.JSONWithPadding;
+import com.vogella.jersey.first.Model.Employee;
+import com.vogella.jersey.first.Model.Employees;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
@@ -15,12 +13,17 @@ import java.util.ArrayList;
 public class LoginResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public JSONWithPadding Login() {
+    public Employees Login() {
 
-        ArrayList<String> orders = new ArrayList<String>();
-        orders.add("hello");
 
-        return new JSONWithPadding(new GenericEntity<ArrayList<String>>(orders){});
+        Employees list = new Employees();
+        list.setEmployeeList(new ArrayList<Employee>());
+
+        list.getEmployeeList().add(new Employee(1, "Lokesh Gupta"));
+        list.getEmployeeList().add(new Employee(2, "Alex Kolenchiskey"));
+        list.getEmployeeList().add(new Employee(3, "David Kameron"));
+
+        return list;
 
 
     }
