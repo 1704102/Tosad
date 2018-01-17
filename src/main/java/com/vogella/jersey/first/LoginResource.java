@@ -1,12 +1,6 @@
 package com.vogella.jersey.first;
+import org.json.JSONObject;
 
-import com.vogella.jersey.first.Model.User;
-import com.vogella.jersey.first.database.LoginDatabase;
-
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObjectBuilder;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
@@ -20,7 +14,14 @@ public class LoginResource {
     public String Login() {
 
 
-            return "hello";
+        JSONObject obj = new JSONObject();
+
+        obj.put("name","foo");
+        obj.put("num",new Integer(100));
+        obj.put("balance",new Double(1000.21));
+        obj.put("is_vip",new Boolean(true));
+
+        return obj.toString();
 
 
     }
