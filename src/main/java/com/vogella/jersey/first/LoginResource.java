@@ -1,8 +1,12 @@
 package com.vogella.jersey.first;
-import org.json.JSONObject;
+
+
+import com.sun.jersey.api.json.JSONWithPadding;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
 
 /**
  * Created by marti on 13-6-2017.
@@ -11,17 +15,12 @@ import javax.ws.rs.core.MediaType;
 public class LoginResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String Login() {
+    public JSONWithPadding Login() {
 
+        ArrayList<String> orders = new ArrayList<String>();
+        orders.add("hello");
 
-        JSONObject obj = new JSONObject();
-
-        obj.put("name","foo");
-        obj.put("num",new Integer(100));
-        obj.put("balance",new Double(1000.21));
-        obj.put("is_vip",new Boolean(true));
-
-        return obj.toString();
+        return new JSONWithPadding(new GenericEntity<ArrayList<String>>(orders){});
 
 
     }

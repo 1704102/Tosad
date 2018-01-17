@@ -7,7 +7,6 @@
           <element id="module-output" name="Tosad 1.1" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.json:json:20171018" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.17" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:2.25.1" />
           <element id="library" level="project" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.25.1" />
@@ -26,6 +25,8 @@
           <element id="library" level="project" name="Maven: org.glassfish.jersey.media:jersey-media-jaxb:2.25.1" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
           <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-bundle:1.10-b01" />
+          <element id="library" level="project" name="Maven: javax.ws.rs:jsr311-api:1.1.1" />
           <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.0.2" />
         </element>
       </element>
