@@ -1,5 +1,6 @@
 package com.vogella.jersey.first;
 
+import com.sun.jersey.api.json.JSONWithPadding;
 import com.vogella.jersey.first.Model.Employee;
 import com.vogella.jersey.first.Model.Employees;
 import com.vogella.jersey.first.Model.User;
@@ -7,6 +8,7 @@ import com.vogella.jersey.first.database.LoginDatabase;
 
 import javax.json.*;
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
@@ -19,12 +21,7 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String Login() {
 
-        JsonObject json = Json.createObjectBuilder()
-                .add("name", "Falco")
-                .add("age", "38")
-                .add("biteable", "true").build();
-        String result = json.toString();
-        return result;
+        return "func({\"name\":\"stackoverflow\",\"id\":5});";
 
     }
 }
