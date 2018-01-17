@@ -21,7 +21,27 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String Login() {
 
-        return "func({\"name\":\"stackoverflow\",\"id\":5});";
+        return "jsonCallback(\n" +
+                "{\n" +
+                "    \"sites\":\n" +
+                "    [\n" +
+                "        {\n" +
+                "            \"siteName\": \"JQUERY4U\",\n" +
+                "            \"domainName\": \"http://www.jquery4u.com\",\n" +
+                "            \"description\": \"#1 jQuery Blog for your Daily News, Plugins, Tuts/Tips &amp; Code Snippets.\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"siteName\": \"BLOGOOLA\",\n" +
+                "            \"domainName\": \"http://www.blogoola.com\",\n" +
+                "            \"description\": \"Expose your blog to millions and increase your audience.\"\n" +
+                "        },\n" +
+                "        {\n" +
+                "            \"siteName\": \"PHPSCRIPTS4U\",\n" +
+                "            \"domainName\": \"http://www.phpscripts4u.com\",\n" +
+                "            \"description\": \"The Blog of Enthusiastic PHP Scripters\"\n" +
+                "        }\n" +
+                "    ]\n" +
+                "});";
 
     }
 }
