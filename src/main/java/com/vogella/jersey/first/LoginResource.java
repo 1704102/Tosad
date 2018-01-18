@@ -29,7 +29,7 @@ public class LoginResource {
 
 
 
-        return array.toString();
+        return job.toString();
 
 
     }
