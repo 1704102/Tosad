@@ -18,7 +18,6 @@ public class LoginResource {
 
         JsonArrayBuilder jab = Json.createArrayBuilder();
 
-
             JsonObjectBuilder job = Json.createObjectBuilder();
             job.add("id", "0");
             job.add("username", "martijn");
@@ -29,7 +28,7 @@ public class LoginResource {
 
 
 
-        return job.toString();
+        return job.build().toString();
 
 
     }
