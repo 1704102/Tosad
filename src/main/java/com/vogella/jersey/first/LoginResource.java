@@ -1,11 +1,5 @@
 package com.vogella.jersey.first;
 
-import com.sun.jersey.api.json.JSONWithPadding;
-import com.vogella.jersey.first.Model.Employee;
-import com.vogella.jersey.first.Model.Employees;
-import com.vogella.jersey.first.Model.User;
-import com.vogella.jersey.first.database.LoginDatabase;
-
 import javax.json.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
