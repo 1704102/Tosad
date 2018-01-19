@@ -24,7 +24,13 @@ public class LoginResource {
             job.add("username", "martijn");
 
             jab.add(job);
-            JsonArray array = jab.build();
+        job.add("id", "1");
+        job.add("username", "Jan");
+
+        jab.add(job);
+        JsonObjectBuilder job2 = Json.createObjectBuilder();
+        job2.add("employees", jab);
+            JsonObject array = job2.build();
 
 
 
