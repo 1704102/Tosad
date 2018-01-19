@@ -35,7 +35,7 @@ public class LoginResource {
 
 
 
-        return array.toString();
+        return "0,martijn" + "\n" + "1,jan";
 
 
     }
