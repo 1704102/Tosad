@@ -13,7 +13,6 @@ public class RepConnector {
     private String password;
     private String service;
     private Connection conn;
-    private final String QUERY_TABLES = "SELECT table_name FROM user_tables";
     private final String QUERY_COLUMS = "SELECT * FROM USER_TAB_COLUMNS";
     private final String QUERY_CONSTRAINT = "SELECT * FROM user_constraints";
 
