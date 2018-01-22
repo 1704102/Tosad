@@ -12,9 +12,9 @@ public class ClassController {
         Database d = new Database(name);
         for ( String key : database.keySet() ) {
             d.addtable(key);
-            database.get(key).forEach(e->{
-                d.getTable(key).addColumn(e);
-            });
+            for(int i = 0; i < database.get(key).size(); i++){
+                d.getTable(key).addColumn(database.get(key).get(i));
+            }
         }
         databases.add(d);
     }
