@@ -1,27 +1,26 @@
 package com.vogella.jersey.first.repDatabase;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-
+/**
+ * Created by marti on 22-1-2018.
+ */
 public class RepConnector {
 
     private String url;
     private String port;
     private String username;
     private String password;
-    private String service;
-    private Connection conn;
-    private final String QUERY_COLUMS = "SELECT * FROM USER_TAB_COLUMNS";
-    private final String QUERY_CONSTRAINT = "SELECT * FROM user_constraints";
+    private String data;
 
-    public RepConnector(String url, String port, String service, String username, String password){
+    public RepConnector(String url, String port, String username, String password){
         this.url = url;
         this.port = port;
         this.username = username;
         this.password = password;
-        this.service = service;
+
+
         connect();
     }
 
@@ -30,7 +29,7 @@ public class RepConnector {
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@//"+ url +":"+ port + "/" + service,username, password);
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//ondora02.hu.nl:8521/cursus02.hu.nl","tosad_2017_2b_team5","tosad_2017_2b_team5");
             System.out.println("connection succesfull");
         } catch (Exception e) {
             System.out.println("connection failed");
@@ -38,39 +37,7 @@ public class RepConnector {
         }
     }
 
-
-    public HashMap<String,ArrayList<String>> GetDatabase(){
-        connect();
-        HashMap<String,ArrayList<String>> columns = new HashMap<>();
-        ResultSet s = select(QUERY_COLUMS);
-        try {
-            while (s.next()) {
-                if(columns.get(s.getString("table_name")) == null){
-                    columns.put(s.getString("table_name"), new ArrayList<String>());
-                }
-                columns.get(s.getString("table_name")).add(s.getString("column_name"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        disconnect();
-        return columns;
-    }
-
     public void disconnect() {
-        try {
-            conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public ResultSet select(String query){
-        ResultSet s = null;
-        try {
-            Statement stm = conn.createStatement();
-            s = stm.executeQuery(query);
-        }catch (Exception e){}
-        return s;
     }
 }
