@@ -32,8 +32,7 @@
             <artifactId>javax.json</artifactId>
             <version>1.0.2</version>
         </dependency>
-
-    </dependencies>
+</dependencies>
     <build>
         <finalName>webappRunnerSample</finalName>
         <plugins>
