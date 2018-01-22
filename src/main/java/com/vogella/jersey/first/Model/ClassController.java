@@ -3,6 +3,7 @@ package com.vogella.jersey.first.Model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@SuppressWarnings("ALL")
 public class ClassController {
     private ArrayList<Database> databases= new ArrayList();
     public ClassController(){}
