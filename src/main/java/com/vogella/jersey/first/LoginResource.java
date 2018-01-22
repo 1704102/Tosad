@@ -1,45 +1,34 @@
 package com.vogella.jersey.first;
 
-import com.vogella.jersey.first.DOA.OracleConnector;
+import com.vogella.jersey.first.Model.ClassController;
+import com.vogella.jersey.first.Model.Database;
+import com.vogella.jersey.first.repDatabase.RepConnector;
 
-import javax.json.*;
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
 
 /**
  * Created by marti on 13-6-2017.
  */
-@Path("login")
+
+@Path("database")
 public class LoginResource {
+
+    @Path("/{param1}/{param2}/{param3}/{param4}/{param5}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String Login() {
+    public String Login(@PathParam("param1") String url,@PathParam("param2") String port, @PathParam("param3") String service,@PathParam("param4") String username, @PathParam("param5") String password) {
+        ClassController cC = new ClassController();
 
+        StringBuilder tables = new StringBuilder();
+        //RepConnector c = new RepConnector(url, port, service, username, password);
+        RepConnector c = new RepConnector("ondora02.hu.nl", "8521","cursus02.hu.nl", "tosad_2017_2b_team5_target", "tosad_2017_2b_team5_target");
+        Database dat = new Database("target");
 
-        OracleConnector c = new OracleConnector("jdbc:oracle:thin:https://ondora02.hu.nl:8080/ords/", "", "tosad_2017_2b_team5_target", "tosad_2017_2b_team5_target");
-        JsonArrayBuilder jab = Json.createArrayBuilder();
-
-
-            JsonObjectBuilder job = Json.createObjectBuilder();
-            job.add("id", "0");
-            job.add("username", "martijn");
-
-            jab.add(job);
-        job.add("id", "1");
-        job.add("username", "Jan");
-
-        jab.add(job);
-        JsonObjectBuilder job2 = Json.createObjectBuilder();
-        job2.add("employees", jab);
-            JsonObject array = job2.build();
+        cC.loadDatabase("ondora", c.GetDatabase());
 
 
 
-
-        return "0,martijn" + "\n" + "1,jan";
-
-
+        return "succes";
     }
 }

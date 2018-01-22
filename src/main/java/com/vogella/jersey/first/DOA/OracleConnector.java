@@ -1,5 +1,6 @@
 package com.vogella.jersey.first.DOA;
 
+import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
 /**
@@ -28,8 +29,17 @@ public class OracleConnector implements DatabaseConnector{
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//ondora02.hu.nl:8521/cursus02.hu.nl","tosad_2017_2b_team5_target","tosad_2017_2b_team5_target");
+            Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//"+ url +":"+ port,username, password);
             System.out.println("connection succesfull");
+
+            String query = "SELECT table_name FROM user_tables";
+            Statement stm = conn.createStatement();
+            ResultSet s = stm.executeQuery(query);
+            while(s.next()) {   // Move the cursor to the next row, return false if no more row
+                String price = s.getString("table_name");
+                System.out.println(price);
+            }
+
         } catch (Exception e) {
             System.out.println("connection failed");
             e.printStackTrace();
