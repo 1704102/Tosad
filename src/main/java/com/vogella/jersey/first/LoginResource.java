@@ -25,7 +25,7 @@ public class LoginResource {
         RepConnector c = new RepConnector("ondora02.hu.nl", "8521","cursus02.hu.nl", "tosad_2017_2b_team5_target", "tosad_2017_2b_team5_target");
         Database dat = new Database("target");
 
-        cC.loadDatabase("ondora", c.GetDatabase());
+        cC.loadDatabase("ondaora", c.GetDatabase());
 
 
 
