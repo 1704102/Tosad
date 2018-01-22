@@ -1,5 +1,7 @@
 package com.vogella.jersey.first;
 
+import com.vogella.jersey.first.DOA.OracleConnector;
+
 import javax.json.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
@@ -16,6 +18,7 @@ public class LoginResource {
     public String Login() {
 
 
+        OracleConnector c = new OracleConnector("jdbc:oracle:thin:https://ondora02.hu.nl:8080/ords/", "", "tosad_2017_2b_team5_target", "tosad_2017_2b_team5_target");
         JsonArrayBuilder jab = Json.createArrayBuilder();
 
 
